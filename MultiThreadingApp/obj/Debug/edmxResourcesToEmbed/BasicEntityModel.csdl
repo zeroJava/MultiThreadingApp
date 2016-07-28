@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ServiceDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="BasicServiceTable">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="GUIDS" Type="Guid" />
+    <Property Name="DATE" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityContainer Name="ServiceDBContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BasicServiceTables" EntityType="Self.BasicServiceTable" />
+  </EntityContainer>
+</Schema>
