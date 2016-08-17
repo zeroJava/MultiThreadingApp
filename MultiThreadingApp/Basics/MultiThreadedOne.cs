@@ -15,15 +15,19 @@ namespace MultiThreadingApp.Basics
         {
             Thread thread1 = new Thread(ThreadOne); // The ThreadStart parameter inside the Thread constructor is a delegate
             Thread thread2 = new Thread(ThreadTwo);
+            Thread thread3 = new Thread(x => ThreadThree("Hello") );
+            thread1.Name = "ThreadOne - basic";
+            thread2.Name = "ThreadTwo - basic";
             thread1.Start();
             thread2.Start();
+            thread3.Start();
             /* The Start() method is used to start a task (thread).
              * */
 
-            Thread thread3 = new Thread(ThreadShare);
             Thread thread4 = new Thread(ThreadShare);
-            thread3.Start();
+            Thread thread5 = new Thread(ThreadShare);
             thread4.Start();
+            thread5.Start();
         }
 
         private void ThreadOne()
@@ -46,7 +50,7 @@ namespace MultiThreadingApp.Basics
 
         private void ThreadShare()
         {
-            if(!_state)
+            if (!_state)
             {
                 System.Console.WriteLine("The state is false");
                 _state = true;
@@ -56,6 +60,14 @@ namespace MultiThreadingApp.Basics
                  * 
                  * Putting the '_state = true' before the WriteLine() will show the text once.
                  * */
+            }
+        }
+
+        private void ThreadThree(string word)
+        {
+            for (int index = 0; index < 5; index++)
+            {
+                System.Console.WriteLine(word);
             }
         }
     }

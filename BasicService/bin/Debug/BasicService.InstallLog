@@ -107,3 +107,63 @@ Affected parameters are:
 Removing EventLog source Basic Entity Service.
 Service Basic Entity Service is being removed from the system...
 Service Basic Entity Service was successfully removed from the system.
+Installing assembly 'C:\Users\Abu\Documents\Programming\C#\MultiThreadingApp\BasicService\bin\Debug\BasicService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\Abu\Documents\Programming\C#\MultiThreadingApp\BasicService\bin\Debug\BasicService.InstallLog
+   assemblypath = C:\Users\Abu\Documents\Programming\C#\MultiThreadingApp\BasicService\bin\Debug\BasicService.exe
+Installing service Basic Entity Service...
+Creating EventLog source Basic Entity Service in log Application...
+Rolling back assembly 'C:\Users\Abu\Documents\Programming\C#\MultiThreadingApp\BasicService\bin\Debug\BasicService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\Abu\Documents\Programming\C#\MultiThreadingApp\BasicService\bin\Debug\BasicService.InstallLog
+   assemblypath = C:\Users\Abu\Documents\Programming\C#\MultiThreadingApp\BasicService\bin\Debug\BasicService.exe
+Restoring event log to previous state for source Basic Entity Service.
+Installing assembly 'C:\Users\Abu\Documents\Programming\C#\MultiThreadingApp\BasicService\bin\Debug\BasicService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\Abu\Documents\Programming\C#\MultiThreadingApp\BasicService\bin\Debug\BasicService.InstallLog
+   assemblypath = C:\Users\Abu\Documents\Programming\C#\MultiThreadingApp\BasicService\bin\Debug\BasicService.exe
+Installing service Basic Entity Service...
+Creating EventLog source Basic Entity Service in log Application...
+Rolling back assembly 'C:\Users\Abu\Documents\Programming\C#\MultiThreadingApp\BasicService\bin\Debug\BasicService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\Abu\Documents\Programming\C#\MultiThreadingApp\BasicService\bin\Debug\BasicService.InstallLog
+   assemblypath = C:\Users\Abu\Documents\Programming\C#\MultiThreadingApp\BasicService\bin\Debug\BasicService.exe
+Restoring event log to previous state for source Basic Entity Service.
+Installing assembly 'C:\Users\Abu\Documents\Programming\C#\MultiThreadingApp\BasicService\bin\Debug\BasicService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\Abu\Documents\Programming\C#\MultiThreadingApp\BasicService\bin\Debug\BasicService.InstallLog
+   assemblypath = C:\Users\Abu\Documents\Programming\C#\MultiThreadingApp\BasicService\bin\Debug\BasicService.exe
+Installing service Basic Entity Service...
+Service Basic Entity Service has been successfully installed.
+Creating EventLog source Basic Entity Service in log Application...
+Committing assembly 'C:\Users\Abu\Documents\Programming\C#\MultiThreadingApp\BasicService\bin\Debug\BasicService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\Abu\Documents\Programming\C#\MultiThreadingApp\BasicService\bin\Debug\BasicService.InstallLog
+   assemblypath = C:\Users\Abu\Documents\Programming\C#\MultiThreadingApp\BasicService\bin\Debug\BasicService.exe
+Uninstalling assembly 'C:\Users\Abu\Documents\Programming\C#\MultiThreadingApp\BasicService\bin\Debug\BasicService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\Abu\Documents\Programming\C#\MultiThreadingApp\BasicService\bin\Debug\BasicService.InstallLog
+   assemblypath = C:\Users\Abu\Documents\Programming\C#\MultiThreadingApp\BasicService\bin\Debug\BasicService.exe
+Removing EventLog source Basic Entity Service.
+Service Basic Entity Service is being removed from the system...
+Service Basic Entity Service was successfully removed from the system.
+Installing assembly 'C:\Users\Abu\Documents\Programming\C#\MultiThreadingApp\BasicService\bin\Debug\BasicService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\Abu\Documents\Programming\C#\MultiThreadingApp\BasicService\bin\Debug\BasicService.InstallLog
+   assemblypath = C:\Users\Abu\Documents\Programming\C#\MultiThreadingApp\BasicService\bin\Debug\BasicService.exe
+Installing service Basic Entity Service...
+Service Basic Entity Service has been successfully installed.
+Creating EventLog source Basic Entity Service in log Application...
+Committing assembly 'C:\Users\Abu\Documents\Programming\C#\MultiThreadingApp\BasicService\bin\Debug\BasicService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\Abu\Documents\Programming\C#\MultiThreadingApp\BasicService\bin\Debug\BasicService.InstallLog
+   assemblypath = C:\Users\Abu\Documents\Programming\C#\MultiThreadingApp\BasicService\bin\Debug\BasicService.exe

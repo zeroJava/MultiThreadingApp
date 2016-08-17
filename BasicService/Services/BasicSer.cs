@@ -7,6 +7,7 @@ using System.Linq;
 using System.ServiceProcess;
 using System.Text;
 using System.Threading;
+using MultiThreadingApp;
 
 namespace MultiThreadingApp.Services
 {
@@ -34,6 +35,7 @@ namespace MultiThreadingApp.Services
 
         private void Execute()
         {
+            MultiThreadingApp.Entitys.SavingDatacs saving = new Entitys.SavingDatacs();
             while (true)
             {
                 if (_tokenSource.IsCancellationRequested)
@@ -41,14 +43,7 @@ namespace MultiThreadingApp.Services
                     break;
                 }
 
-                using (var context = new ServiceDBContext())
-                {
-                    var item = new BasicServiceTable();
-                    item.GUIDS = Guid.NewGuid();
-                    item.DATE = DateTime.Now;
-                    context.BasicServiceTables.Add(item);
-                    context.SaveChanges();
-                }
+                saving.Execute();
             }
         }
     }
