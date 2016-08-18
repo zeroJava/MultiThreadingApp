@@ -18,7 +18,7 @@ namespace MultiThreadingApp.Blockings
             Thread thread2 = new Thread(x => ThreadFunctionJoin1("Joining 1"));
             thread2.Start();
             thread2.Join(5000);
-            /* The join method in multithread force the main thread to pause, until the sub thread has finished executing.
+            /* The join method in multithread forces the main thread to pause, until the sub thread invoking has finished executing.
              * With join we force the multithread to run one thread a time.
              * */
             System.Console.WriteLine("We are joining to 2....");
@@ -40,9 +40,15 @@ namespace MultiThreadingApp.Blockings
             thread4.Join(5000);
 
             System.Console.WriteLine("Count: " + _count);
-            /* The value of count would either be zero or a low value, but not the expected value of 30.
-             * This is because
+            /* Without join, the value of count would either be zero or a low value, but not the expected value of 30.
+             * This is because all the threads are running all at the same time, and most likely this line will be invoked before all threads have finished executing.
              * */
+
+            Thread threadInception = new Thread(ThreadInception); // Demonstrates joins of sub-threads within a sub-thread within a main thread.
+            threadInception.Start();
+
+            Thread thread5 = new Thread(x => ThreadFunctionJoin1("Joining the functions")); // Demonstrates joins of sub-threads within a sub-thread within a main thread.
+            thread5.Start();
         }
 
         private void ThreadFunctionSleep(string word)
@@ -84,6 +90,30 @@ namespace MultiThreadingApp.Blockings
                 System.Console.WriteLine("Join3: " + word);
                 _count++;
             }
+        }
+
+        private void ThreadInception()
+        {
+            Thread thread2 = new Thread(x => ThreadFunctionJoin1("inception Joining 1"));
+            thread2.Start();
+            thread2.Join();
+
+            /* These join will pause the sub-thread which this method is pegged to, and NOT main thread.
+             * This is because join looks at the closest parent thread, which in this case is the sub-thread and not the main thread.
+             * */
+
+            System.Console.WriteLine("We are joining to 2, thread inception....");
+
+            Thread thread3 = new Thread(x => ThreadFunctionJoin1("inception Joining 2"));
+            thread3.Start();
+            thread3.Join();
+            System.Console.WriteLine("We are joining to 3, thread inception....");
+
+            Thread thread4 = new Thread(x => ThreadFunctionJoin1("inception Joining 3"));
+            thread4.Start();
+            thread4.Join();
+
+            System.Console.WriteLine("Thread inception ending");
         }
     }
 }
