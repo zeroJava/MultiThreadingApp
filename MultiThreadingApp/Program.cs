@@ -26,8 +26,14 @@ namespace MultiThreadingApp
             Entitys.SavingDatacs saving = new Entitys.SavingDatacs();
             saving.Execute();*/
 
-            Blockings.ThreadBlocks block = new Blockings.ThreadBlocks();
-            block.Execute();
+            /*Blockings.ThreadBlocks block = new Blockings.ThreadBlocks();
+            block.Execute();*/
+
+            /*Lockings.ThreadLocks locking = new Lockings.ThreadLocks();
+            locking.Execute();*/
+
+            Lockings.ThreadReadWriteLock readWritelock = new Lockings.ThreadReadWriteLock();
+            readWritelock.Execute();
 
             Console.ReadKey();
         }

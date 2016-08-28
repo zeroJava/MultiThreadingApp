@@ -17,5 +17,6 @@ namespace MultiThreadingApp
         public int ID { get; set; }
         public Nullable<System.Guid> GUIDS { get; set; }
         public Nullable<System.DateTime> DATE { get; set; }
+        public string SOURCE { get; set; }
     }
 }

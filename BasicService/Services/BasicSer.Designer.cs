@@ -1,6 +1,6 @@
-﻿namespace MultiThreadingApp.Services
+﻿namespace BasicService.Services
 {
-    partial class BasicService
+    partial class BasicSer
     {
         /// <summary> 
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            this.ServiceName = "BasicService";
+            this.ServiceName = "BasicSer";
         }
 
         #endregion

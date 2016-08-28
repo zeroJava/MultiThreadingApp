@@ -8,22 +8,23 @@ using System.ServiceProcess;
 using System.Text;
 using System.Threading;
 using MultiThreadingApp;
+using System.IO;
 
-namespace MultiThreadingApp.Services
+namespace BasicService.Services
 {
-    partial class BasicService : ServiceBase
+    partial class BasicSer : ServiceBase
     {
         private CancellationTokenSource _tokenSource = new CancellationTokenSource();
 
-        public BasicService()
+        public BasicSer()
         {
             InitializeComponent();
         }
 
         protected override void OnStart(string[] args)
         {
-            var thread1 = new Thread(Execute);
-            var thread2 = new Thread(Execute);
+            var thread1 = new Thread(x => Execute("Thread1"));
+            var thread2 = new Thread(z => Execute("Thread2"));
             thread1.Start();
             thread2.Start();
         }
@@ -33,17 +34,38 @@ namespace MultiThreadingApp.Services
             _tokenSource.Cancel();
         }
 
-        private void Execute()
+        private void Execute(string source)
         {
-            MultiThreadingApp.Entitys.SavingDatacs saving = new Entitys.SavingDatacs();
-            while (true)
+            try
             {
-                if (_tokenSource.IsCancellationRequested)
+                MultiThreadingApp.Entitys.SavingDatacs saving = new MultiThreadingApp.Entitys.SavingDatacs();
+                while (true)
                 {
-                    break;
-                }
+                    if (_tokenSource.IsCancellationRequested)
+                    {
+                        break;
+                    }
 
-                saving.Execute();
+                    saving.Execute(source);
+                }
+            }
+            catch (Exception ex)
+            {
+                try
+                {
+                    using (var write = new StreamWriter(@"C:\Users\Abu\Documents\Programming\C#\MultiThreadingApp\Exception file.txt"))
+                    {
+                        write.WriteLine("Exception:\n" + ex.ToString());
+                    }
+                }
+                catch (IOException ioex)
+                {
+                    Console.WriteLine("IOException Console");
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("exception");
+                }
             }
         }
     }

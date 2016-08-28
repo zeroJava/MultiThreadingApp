@@ -80,6 +80,8 @@
     <Compile Include="Basics\MultiThreadSleep.cs" />
     <Compile Include="Blockings\ThreadBlocks.cs" />
     <Compile Include="Entitys\SavingDatacs.cs" />
+    <Compile Include="Lockings\ThreadLocks.cs" />
+    <Compile Include="Lockings\ThreadReadWriteLock.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ThreadPools\ThreadPoolExample.cs" />

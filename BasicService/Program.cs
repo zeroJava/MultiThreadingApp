@@ -17,7 +17,7 @@ namespace BasicService
             ServiceBase[] ServicesToRun;
             ServicesToRun = new ServiceBase[]
             {
-                new Service1()
+                new BasicService.Services.BasicSer()
             };
             ServiceBase.Run(ServicesToRun);
         }

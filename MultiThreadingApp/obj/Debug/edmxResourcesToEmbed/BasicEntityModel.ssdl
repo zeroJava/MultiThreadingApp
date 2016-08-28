@@ -7,6 +7,7 @@
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="GUIDS" Type="uniqueidentifier" />
     <Property Name="DATE" Type="datetime" />
+    <Property Name="SOURCE" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityContainer Name="ServiceDBModelStoreContainer">
     <EntitySet Name="BasicServiceTable" EntityType="Self.BasicServiceTable" Schema="dbo" store:Type="Tables" />

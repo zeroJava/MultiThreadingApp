@@ -4,6 +4,7 @@
     <EntitySetMapping Name="BasicServiceTables">
       <EntityTypeMapping TypeName="ServiceDBModel.BasicServiceTable">
         <MappingFragment StoreEntitySet="BasicServiceTable">
+          <ScalarProperty Name="SOURCE" ColumnName="SOURCE" />
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="GUIDS" ColumnName="GUIDS" />
           <ScalarProperty Name="DATE" ColumnName="DATE" />
