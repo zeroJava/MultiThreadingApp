@@ -38,7 +38,9 @@ namespace MultiThreadingApp.Lockings
                     _readWriterLock.ExitWriteLock();
 
                     /* ReaderWriterLockSlim is another locking feature in c#/.net.
-                     * Like the lock() feature, ReaderWriterLock also locks the resource that is used by another thread.  
+                     * Like the lock() feature, ReaderWriterLock also locks the resource that is used by another thread. 
+                     * But unlike lock(), which only allows one thread to access the share rource one at a time, ReaderWriterLock allows multiple thread to read
+                     * at the same time, but does an exclusive lock when writing. 
                      * */
                 }
             }
@@ -52,6 +54,11 @@ namespace MultiThreadingApp.Lockings
                     _readWriterLock.ExitWriteLock();
                 }
             }
+        }
+
+        private void CreateDynamicClass()
+        {
+            // http://www.c-sharpcorner.com/article/dynamic-class-using-c-sharp/
         }
     }
 }

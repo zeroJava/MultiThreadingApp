@@ -79,6 +79,7 @@
     <Compile Include="Basics\MultiThreadLocks.cs" />
     <Compile Include="Basics\MultiThreadSleep.cs" />
     <Compile Include="Blockings\ThreadBlocks.cs" />
+    <Compile Include="Entitys\RetrievingData.cs" />
     <Compile Include="Entitys\SavingDatacs.cs" />
     <Compile Include="Lockings\ThreadLocks.cs" />
     <Compile Include="Lockings\ThreadReadWriteLock.cs" />

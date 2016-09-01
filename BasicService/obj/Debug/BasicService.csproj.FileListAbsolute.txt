@@ -13,3 +13,6 @@ C:\Users\Abu\Documents\Programming\C#\MultiThreadingApp\BasicService\bin\Debug\E
 C:\Users\Abu\Documents\Programming\C#\MultiThreadingApp\BasicService\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Abu\Documents\Programming\C#\MultiThreadingApp\BasicService\obj\Debug\BasicService.exe
 C:\Users\Abu\Documents\Programming\C#\MultiThreadingApp\BasicService\obj\Debug\BasicService.pdb
+C:\Users\Abu\Documents\Programming\C#\MultiThreadingApp\BasicService\bin\Debug\NLog.config
+C:\Users\Abu\Documents\Programming\C#\MultiThreadingApp\BasicService\bin\Debug\NLog.dll
+C:\Users\Abu\Documents\Programming\C#\MultiThreadingApp\BasicService\bin\Debug\NLog.xml
