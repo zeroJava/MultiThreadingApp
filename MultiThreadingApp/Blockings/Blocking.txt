@@ -1,0 +1,15 @@
+﻿ Blocking
+
+ Block is a multithreading feature that pauses a thread for a specific ammount of time, which will automatically resume running the thread when its reach its threshold.
+
+ Blocking comes into two forms: Sleep() and Join().
+
+ Thread.Sleep():
+
+ Thread.Sleep() pauses the current thread in resides in, and thus halts everything in that space (thread) that come atfer invokation of Thread.sleep(), and waits 
+ until the threshold has been meet, which at that point resume running the thread.
+
+ thread.Join()
+
+ thread.Join, unlike Thread.Sleep pauses the space (thread) it placed in, but keeps the sub-thread which inoked the function alive, until its finished, which it 
+ then merges back to the main thread resumes running the main thread.  

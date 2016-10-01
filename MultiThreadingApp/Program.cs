@@ -12,28 +12,37 @@ namespace MultiThreadingApp
         static void Main(string[] args)
         {
             /*Basics.MultiThreadedOne thread = new Basics.MultiThreadedOne();
-            thread.Execute();*/
+            thread.ExecuteJoins();*/
 
             /*Basics.MultiThreadLocks locking = new Basics.MultiThreadLocks();
-            locking.Execute();*/
+            locking.ExecuteJoins();*/
 
             /*Basics.MultiThreadSleep sleeping = new Basics.MultiThreadSleep();
-            sleeping.Execute();*/
+            sleeping.ExecuteJoins();*/
 
             /*ThreadPools.ThreadPoolExample pooling = new ThreadPools.ThreadPoolExample();
-            pooling.Execute();
+            pooling.ExecuteJoins();
 
             Entitys.SavingDatacs saving = new Entitys.SavingDatacs();
-            saving.Execute();*/
+            saving.ExecuteJoins();*/
 
             /*Blockings.ThreadBlocks block = new Blockings.ThreadBlocks();
-            block.Execute();*/
+            block.ExecuteJoins();*/
+            // block.ExecuteSleep();
 
             /*Lockings.ThreadLocks locking = new Lockings.ThreadLocks();
-            locking.Execute();*/
+            locking.ExecuteJoins();*/
 
-            Lockings.ThreadReadWriteLock readWritelock = new Lockings.ThreadReadWriteLock();
-            readWritelock.Execute();
+            /*Lockings.ThreadReadWriteLock readWritelock = new Lockings.ThreadReadWriteLock();
+            readWritelock.ExecuteJoins();*/
+
+            /*SignalCs.ThreasAutoResetEvnt autoResetEventTest = new SignalCs.ThreasAutoResetEvnt();
+            // autoResetEvent.Execute();
+            autoResetEvent.ExecuteTwo();*/
+
+            SignalCs.ThreasManualResetEvnt manRestEventTest = new SignalCs.ThreasManualResetEvnt();
+            //manRestEventTest.Execute();
+            manRestEventTest.ExecuteTwo();
 
             Console.ReadKey();
         }

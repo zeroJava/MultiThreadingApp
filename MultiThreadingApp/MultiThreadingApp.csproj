@@ -81,10 +81,13 @@
     <Compile Include="Blockings\ThreadBlocks.cs" />
     <Compile Include="Entitys\RetrievingData.cs" />
     <Compile Include="Entitys\SavingDatacs.cs" />
+    <Compile Include="FileIOs\PersistData.cs" />
     <Compile Include="Lockings\ThreadLocks.cs" />
     <Compile Include="Lockings\ThreadReadWriteLock.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SignalCs\ThreasAutoResetEvnt.cs" />
+    <Compile Include="SignalCs\ThreasManualResetEvnt.cs" />
     <Compile Include="ThreadPools\ThreadPoolExample.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -110,6 +113,7 @@
       <LastGenOutput>BasicEntityModel.cs</LastGenOutput>
     </Content>
     <Content Include="Basics\Basics.txt" />
+    <Content Include="Blockings\Blocking.txt" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

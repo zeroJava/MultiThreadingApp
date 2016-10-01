@@ -16,11 +16,8 @@ namespace MultiThreadingApp.Blockings
         /// </summary>
         /// 
 
-        public void Execute()
+        public void ExecuteJoins()
         {
-            //Thread thread1 = new Thread(x => ThreadFunctionSleep("Sleeping"));
-            //thread1.Start();
-
             Thread thread2 = new Thread(x => ThreadFunctionJoin1("Joining 1"));
             thread2.Start();
             thread2.Join(5000);
@@ -56,6 +53,16 @@ namespace MultiThreadingApp.Blockings
             Thread thread5 = new Thread(x => IncorrectJoinInception());
             thread5.Start();
             thread5.Join();
+        }
+
+        public void ExecuteSleep()
+        {
+            Thread thread1 = new Thread(x => TSleeping("thread1"));
+            Thread thread2 = new Thread(x => TSleeping("thread2"));
+            Thread thread3 = new Thread(x => TSleeping2("threadsleep2_1"));
+            thread1.Start();
+            thread2.Start();
+            thread3.Start();
         }
 
         private void ThreadFunctionSleep(string word)
@@ -142,6 +149,22 @@ namespace MultiThreadingApp.Blockings
 
             /* Doing a join like this is useless, because all the threads have already been created and started, and we cannot pause the thread.
              * */
+        }
+
+        private void TSleeping(string name)
+        {
+            System.Console.WriteLine("We are going to sleep now inisde " + name);
+            Thread.Sleep(10000);
+            System.Console.WriteLine("We are out of sleep, inside " + name);
+        }
+
+        private void TSleeping2(string name)
+        {
+            while (true)
+            {
+                System.Console.WriteLine("Inside the TSleeping2 " + name);
+                Thread.Sleep(1000);
+            }
         }
     }
 }

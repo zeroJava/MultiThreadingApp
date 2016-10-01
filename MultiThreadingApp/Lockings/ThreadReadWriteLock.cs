@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MultiThreadingApp.FileIOs;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,12 +19,19 @@ namespace MultiThreadingApp.Lockings
 
         public void Execute()
         {
-            ThreadPool.QueueUserWorkItem(x => ThreadFunction("Thead 1"));
-            ThreadPool.QueueUserWorkItem(x => ThreadFunction("Thead 2"));
-            ThreadPool.QueueUserWorkItem(x => ThreadFunction("Thead 3"));
-            ThreadPool.QueueUserWorkItem(x => ThreadFunction("Thead 4"));
-            ThreadPool.QueueUserWorkItem(x => ThreadFunction("Thead 5"));
-            ThreadPool.QueueUserWorkItem(x => ThreadFunction("Thead 6"));
+            // ThreadPool.QueueUserWorkItem(x => ThreadFunction("Thead 1"));
+            // ThreadPool.QueueUserWorkItem(x => ThreadFunction("Thead 2"));
+            // ThreadPool.QueueUserWorkItem(x => ThreadFunction("Thead 3"));
+            // ThreadPool.QueueUserWorkItem(x => ThreadFunction("Thead 4"));
+            // ThreadPool.QueueUserWorkItem(x => ThreadFunction("Thead 5"));
+            // ThreadPool.QueueUserWorkItem(x => ThreadFunction("Thead 6"));
+
+            ThreadPool.QueueUserWorkItem(x => DisplayTableSize("Thead 1"));
+            ThreadPool.QueueUserWorkItem(x => DisplayTableSize("Thead 2"));
+            ThreadPool.QueueUserWorkItem(x => DisplayTableSize("Thead 3"));
+            ThreadPool.QueueUserWorkItem(x => DisplayTableSize("Thead 4"));
+            ThreadPool.QueueUserWorkItem(x => DisplayTableSize("Thead 5"));
+            ThreadPool.QueueUserWorkItem(x => DisplayTableSize("Thead 6"));
         }
 
         private void ThreadFunction(string threadName)
@@ -56,9 +64,29 @@ namespace MultiThreadingApp.Lockings
             }
         }
 
+        private void DisplayTableSize(string name)
+        {
+            using (ServiceDBContext context = new ServiceDBContext())
+            {
+                PersistData persisting = new PersistData();
+                while (true)
+                {
+                    _readWriterLock.EnterReadLock();
+                    List<BasicServiceTable> list = context.BasicServiceTables.ToList();
+                    System.Console.WriteLine(name + " " + list.Count);
+                    _readWriterLock.ExitReadLock();
+
+                    _readWriterLock.EnterWriteLock();
+                    persisting.Save(list);
+                    _readWriterLock.ExitWriteLock();
+                }
+            }
+        }
+
         private void CreateDynamicClass()
         {
             // http://www.c-sharpcorner.com/article/dynamic-class-using-c-sharp/
+            // http://stackoverflow.com/questions/16973172/waiting-queue-vs-ready-queue
         }
     }
 }

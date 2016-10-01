@@ -60,10 +60,17 @@ namespace MultiThreadingApp.Lockings
                         System.Console.WriteLine("shared locked resource");
                     }
 
-                    /* The lock feature will lock all shared resource used within the lock block
+                    /* The lock feature will lock all shared resource used within the lock block.
+                     * This will mean that the any other threads wanting to access the shared resource will have to wait
+                     * until the thread using the shared resource has finished using it. 
                      * */
 
                     _sharedLockedResource++;
+
+                    /* Here we also demonstrate Atomicity; meaning that the _sharedLockedResource variable is read and written inside 
+                     * the same lock block, thus the integrity of the share resource is sound in this instance, because there is 
+                     * no outside factors that can change the value.  
+                     * */
                 }
             }
         }
