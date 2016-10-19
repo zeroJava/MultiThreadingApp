@@ -31,7 +31,7 @@ namespace MultiThreadingApp.SignalCs
          * 
          * Difference between AutoResetEvent and ManaulResetEvent is that the WaitOne() in 
          * ManualResetEvent WaitOne() function will not pause the thread when used a after the Set() 
-         * function; where as AutoresetEvent WaitOne() will always pause the thread
+         * function; where as AutoresetEvent WaitOne() will always pause the thread, even
          * after the Set() function.
          * This is because, once the manaualResetEvent Set() function opens the gates (analogy)
          * it does not close itself automatically, so the next time WaitOne() is called, it's 
@@ -63,7 +63,16 @@ namespace MultiThreadingApp.SignalCs
 
                 /* WaitOne(10000) function in this case will only pause the thread once,
                  * and after we excute the Set() function, the WaitOne() will not pause
-                 * the second time.
+                 * the second time or anytime after that.
+                 * This is because the Set() function open the gate (anology).
+                 * But, if we do not invoke the Set() function, then WaitOne() will 
+                 * allows pause the thread.
+                 * */
+
+                /* Invokig the WaitOne() on a object that has a gate (anology) that is
+                 * open is useless, because it defeats the purpose of stopping something
+                 * , in this case process, when there is nothing to stop it .i.e. a close
+                 * gate. 
                  * */
             }
         }

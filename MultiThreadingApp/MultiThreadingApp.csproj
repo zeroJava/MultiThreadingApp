@@ -43,9 +43,11 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.ServiceProcess" />
@@ -82,11 +84,22 @@
     <Compile Include="Entitys\RetrievingData.cs" />
     <Compile Include="Entitys\SavingDatacs.cs" />
     <Compile Include="FileIOs\PersistData.cs" />
+    <Compile Include="LnumBasic\CreateNumber.cs" />
+    <Compile Include="LnumBasic\ExecuteFileNume.cs" />
+    <Compile Include="LnumBasic\MassiveNumberCreator.cs" />
+    <Compile Include="LnumBasic\PersitNumber.cs" />
     <Compile Include="Lockings\ThreadLocks.cs" />
     <Compile Include="Lockings\ThreadReadWriteLock.cs" />
+    <Compile Include="MultiThrStream\Baseclass.cs" />
+    <Compile Include="MultiThrStream\InfiteStuck.cs" />
+    <Compile Include="MultiThrStream\MainClInt.cs" />
+    <Compile Include="MultiThrStream\Persisitance.cs" />
+    <Compile Include="MultiThrStream\SubclassOne.cs" />
+    <Compile Include="MultiThrStream\SubclassTwo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SignalCs\ThreasAutoResetEvnt.cs" />
+    <Compile Include="SignalCs\ThreasCountdownEvnt.cs" />
     <Compile Include="SignalCs\ThreasManualResetEvnt.cs" />
     <Compile Include="ThreadPools\ThreadPoolExample.cs" />
   </ItemGroup>
@@ -118,7 +131,9 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="AsynchronousAwaits\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

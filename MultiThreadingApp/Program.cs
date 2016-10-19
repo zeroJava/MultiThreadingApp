@@ -40,9 +40,18 @@ namespace MultiThreadingApp
             // autoResetEvent.Execute();
             autoResetEvent.ExecuteTwo();*/
 
-            SignalCs.ThreasManualResetEvnt manRestEventTest = new SignalCs.ThreasManualResetEvnt();
+            /*SignalCs.ThreasManualResetEvnt manRestEventTest = new SignalCs.ThreasManualResetEvnt();
             //manRestEventTest.Execute();
-            manRestEventTest.ExecuteTwo();
+            manRestEventTest.ExecuteTwo();*/
+
+            /*SignalCs.ThreasCountdownEvnt _countEvent = new SignalCs.ThreasCountdownEvnt();
+            _countEvent.Execute();*/
+
+            /*LnumBasic.ExecuteFileNume exFile = new LnumBasic.ExecuteFileNume();
+            exFile.Execute();*/
+
+            MultiThrStream.MainClInt _main = new MultiThrStream.MainClInt();
+            _main.Exeute();
 
             Console.ReadKey();
         }
