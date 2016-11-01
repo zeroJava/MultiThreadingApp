@@ -18,7 +18,7 @@ namespace MultiThreadingApp
             locking.ExecuteJoins();*/
 
             /*Basics.MultiThreadSleep sleeping = new Basics.MultiThreadSleep();
-            sleeping.ExecuteJoins();*/
+            sleeping.Execute();*/
 
             /*ThreadPools.ThreadPoolExample pooling = new ThreadPools.ThreadPoolExample();
             pooling.ExecuteJoins();
@@ -50,8 +50,11 @@ namespace MultiThreadingApp
             /*LnumBasic.ExecuteFileNume exFile = new LnumBasic.ExecuteFileNume();
             exFile.Execute();*/
 
-            MultiThrStream.MainClInt _main = new MultiThrStream.MainClInt();
-            _main.Exeute();
+            /*MultiThrStream.MainClInt _main = new MultiThrStream.MainClInt();
+            _main.Exeute();*/
+
+            AsynchronousAwaits.AsyncEgOne _asyncstuff = new AsynchronousAwaits.AsyncEgOne();
+            _asyncstuff.Execute();
 
             Console.ReadKey();
         }

@@ -15,7 +15,7 @@ namespace MultiThreadingApp.SignalCs
 
         /* CountdownEvent allows us to pause (block) a thread for specfic time by using 
          * the Wait(100000) function, but also allow us to unblock the thread manually 
-         * by using the Signal() function.
+         * if we use the Signal() function a set number of times.
          * 
          * In-order to resume the thread and leave the Wait(), we have to invoke the
          * Signal() function a specific time, until the count we specified in the

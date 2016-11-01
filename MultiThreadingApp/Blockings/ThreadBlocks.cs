@@ -14,8 +14,6 @@ namespace MultiThreadingApp.Blockings
         /// The join method in multithread forces the main thread to pause, until the sub thread invoking has finished executing. 
         /// With join we force the multithread to run one thread a time.
         /// </summary>
-        /// 
-
         public void ExecuteJoins()
         {
             Thread thread2 = new Thread(x => ThreadFunctionJoin1("Joining 1"));
@@ -74,6 +72,8 @@ namespace MultiThreadingApp.Blockings
                 {
                     System.Console.WriteLine("Starting to sleep...");
                     Thread.Sleep(1000);
+                    /* Thread.Sleep will pause the current thread it is placed under for specific number of secconds.
+                     * */
                 }
                 System.Console.WriteLine("Starting not sleep..." + _count++);
             }
