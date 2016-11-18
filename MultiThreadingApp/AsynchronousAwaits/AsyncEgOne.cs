@@ -53,9 +53,9 @@ namespace MultiThreadingApp.AsynchronousAwaits
              * So from the Display function uptil the await keyword inside the InnerExecute function, the 
              * compiler will execute the functions synchronousy in an sequential manner.
              * But when the await keyword and the function that is assiciated with it invoked, instead of waiting
-             * for OpperationAsyncro function inside aync function InnerExecute to finish like normally, the compiler 
+             * for OperationAsyncro function inside aync function InnerExecute to finish like normally, the compiler 
              * moves to the next function, and starts executing the remainder of the functions.
-             * After OpperationAsyncro function has finished executing, the compiler will continue executing the remainder
+             * After OperationAsyncro function has finished executing, the compiler will continue executing the remainder
              * functions inside the InnerExecute function.
              * When the compiler is running async, it is kind of running parallel with async method running parallel to 
              * the main method.
@@ -74,7 +74,16 @@ namespace MultiThreadingApp.AsynchronousAwaits
         {
             Action("InnerExecuteOne");
             Action("InnerExecuteTwo");
-            await OpperationAsyncro(); // await keyword is that makes it asynchronous
+            await OperationAsyncro(); // await keyword is that makes it asynchronous
+            /* When the function with the await keyword is executed, the compiler moves to the next 
+             * fuction (Action(Three)) immediately before the function associated with the await keyword 
+             * has finished executing.
+             * 
+             * Look at it this way, the await keyword creates a pocket dimension; this dimension is 
+             * our OperationAsyncro().
+             * This pocket dimension exist within the larger universe i.e. our application (main thread),
+             * and it's running parallel to our main universe.
+             * */
             //OperaitionNotAsyncro();
             Action("InnerExecuteThree");
             Action("InnerExecuteFour");
@@ -95,7 +104,7 @@ namespace MultiThreadingApp.AsynchronousAwaits
             Display(word);
         }
 
-        private Task OpperationAsyncro()
+        private Task OperationAsyncro()
         {
             return Task.Factory.StartNew(() =>
             {

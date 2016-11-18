@@ -5,3 +5,9 @@
  Multithreading is the ability to run multiple threads (executions/task) simultanously with other threads.
 
  Multithreading basically means that we can run multiple task. thus allowing our application to multitask.
+
+ -----------------------------------------------------------------------------------------------------------
+
+ Concurrency
+
+ Concurrency mean running 

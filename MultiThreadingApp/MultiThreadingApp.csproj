@@ -82,6 +82,9 @@
     <Compile Include="Basics\MultiThreadLocks.cs" />
     <Compile Include="Basics\MultiThreadSleep.cs" />
     <Compile Include="Blockings\ThreadBlocks.cs" />
+    <Compile Include="Concurrencies\BaseCon.cs" />
+    <Compile Include="Concurrencies\ConcurrenciesThreads.cs" />
+    <Compile Include="Concurrencies\SubOneCon.cs" />
     <Compile Include="Entitys\RetrievingData.cs" />
     <Compile Include="Entitys\SavingDatacs.cs" />
     <Compile Include="FileIOs\PersistData.cs" />

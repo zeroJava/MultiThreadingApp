@@ -53,8 +53,11 @@ namespace MultiThreadingApp
             /*MultiThrStream.MainClInt _main = new MultiThrStream.MainClInt();
             _main.Exeute();*/
 
-            AsynchronousAwaits.AsyncEgOne _asyncstuff = new AsynchronousAwaits.AsyncEgOne();
-            _asyncstuff.Execute();
+            /*AsynchronousAwaits.AsyncEgOne _asyncstuff = new AsynchronousAwaits.AsyncEgOne();
+            _asyncstuff.Execute();*/
+
+            Concurrencies.ConcurrenciesThreads _conThread = new Concurrencies.ConcurrenciesThreads();
+            _conThread.Execute();
 
             Console.ReadKey();
         }
