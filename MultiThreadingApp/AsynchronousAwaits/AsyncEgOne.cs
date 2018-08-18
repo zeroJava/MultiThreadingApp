@@ -63,14 +63,14 @@ namespace MultiThreadingApp.AsynchronousAwaits
             Display("Start Asynchronously");
             Action("ExeOne Asynchronously");
             Action("ExeTwo Asynchronously");
-            InnerExecute();
-            InnerExecuteTwo();
-            InnerExecuteThree();
+            InnerExecuteAsync();
+            InnerExecuteTwoAsync();
+            InnerExecuteThreeAsync();
             Action("ExeThree Asynchronously");
             Action("ExeFour Asynchronously");
         }
 
-        private async void InnerExecute() // using the async keyword, we are flugging it as a method that contained await, and thus working async
+        private async void InnerExecuteAsync() // using the async keyword, we are flugging it as a method that contained await, and thus working async
         {
             Action("InnerExecuteOne");
             Action("InnerExecuteTwo");
@@ -89,12 +89,12 @@ namespace MultiThreadingApp.AsynchronousAwaits
             Action("InnerExecuteFour");
         }
 
-        private async void InnerExecuteTwo()
+        private async void InnerExecuteTwoAsync()
         {
             await OpperationAsyncroTwo();
         }
 
-        private async void InnerExecuteThree()
+        private async void InnerExecuteThreeAsync()
         {
             await OpperationAsyncroThree();
         }
