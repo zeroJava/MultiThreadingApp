@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AsynchronousAwaits\AsyncEgOne.cs" />
+    <Compile Include="AsynchronousAwaits\AsyncSimpleEg.cs" />
     <Compile Include="BasicEntityModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

@@ -56,8 +56,11 @@ namespace MultiThreadingApp
             /*AsynchronousAwaits.AsyncEgOne _asyncstuff = new AsynchronousAwaits.AsyncEgOne();
             _asyncstuff.Execute();*/
 
-            Concurrencies.ConcurrenciesThreads _conThread = new Concurrencies.ConcurrenciesThreads();
-            _conThread.Execute();
+            //Concurrencies.ConcurrenciesThreads _conThread = new Concurrencies.ConcurrenciesThreads();
+            //_conThread.Execute();
+
+            AsynchronousAwaits.AsyncSimpleEg simpleEg = new AsynchronousAwaits.AsyncSimpleEg();
+            simpleEg.Run();
 
             Console.ReadKey();
         }
