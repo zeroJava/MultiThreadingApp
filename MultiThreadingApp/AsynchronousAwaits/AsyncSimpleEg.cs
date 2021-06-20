@@ -15,7 +15,7 @@ namespace MultiThreadingApp.AsynchronousAwaits
 			Console.WriteLine("Executing 1");
 			Console.WriteLine("Executing 2");
 
-			TaskAwaiter<int> awaiter = BigNumberCountAsync(5000000).GetAwaiter();
+			TaskAwaiter<int> awaiter = BigNumberCountAsync(500000).GetAwaiter();
 			//Console.WriteLine(awaiter.GetResult());
 
 			Console.WriteLine("Finshed");
@@ -25,11 +25,24 @@ namespace MultiThreadingApp.AsynchronousAwaits
 		{
 			Console.WriteLine("Limit: " + limit);
 
-			BigInteger bigInteger = await GetBigNumber(limit);
-			Console.WriteLine("Number generated");
+			int count = 0;
 
-			int count = bigInteger.ToString().Length;
-			Console.WriteLine("Count: " + count);
+			await GetBigNumber(limit).ContinueWith(rt =>
+			{
+				if (rt.Status == TaskStatus.RanToCompletion)
+				{
+					Console.WriteLine("Number generated");
+
+					BigInteger bigInteger = rt.Result;
+					count = bigInteger.ToString().Length;
+					
+					Console.WriteLine("Count: " + count);
+				}
+				else if (rt.Status == TaskStatus.Faulted)
+				{
+					Console.WriteLine(rt.Exception.GetBaseException().Message);
+				}
+			});
 
 			return count;
 		}
